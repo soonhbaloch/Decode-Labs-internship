@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DecodeLabs - Project 1 (Static Webpage)</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Styling (80px Height) [cite: 53] */
+        header {
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            background: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+
+        /* Hero Section (Min-Height 60vh) [cite: 84] */
+        .hero {
+            min-height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1352&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px; /* [cite: 86] */
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            padding: 15px 35px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Content Grid (1200px Max-Width & 24px Gutter) [cite: 85, 88] */
+        main {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(288px, 1fr)); /* [cite: 91] */
+            gap: 24px; /* Gutter: 24px  */
+        }
+
+        .grid-item {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .grid-item-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Footer (400px Height) [cite: 76] */
+        footer {
+            height: 400px;
+            background-color: #1a1a1a;
+            color: #888;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-content h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">DECODELABS</div>
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">SERVICES</a>
+            <a href="#">CONTACT</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Main Headline</h1>
+            <button class="cta-button">Call To Action</button>
+        </section>
+
+        <section style="margin-top: 60px;">
+            <h2 style="text-align: center; margin-bottom: 40px;">Our Featured Projects</h2>
+            
+            <div class="content-grid">
+                <article class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&q=60" alt="Coding">
+                    <div class="grid-item-content">
+                        <h3>Web Development</h3>
+                        <p>Building clean and semantic digital foundations.</p>
+                    </div>
+                </article>
+
+                <article class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=500&q=60" alt="Software">
+                    <div class="grid-item-content">
+                        <h3>System Design</h3>
+                        <p>Visual architecture and technical integrity.</p>
+                    </div>
+                </article>
+
+                <article class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=60" alt="Laptop">
+                    <div class="grid-item-content">
+                        <h3>Interface Engineering</h3>
+                        <p>Crafting pixel-perfect renders for users.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h2>CONTACT INFO BLOCK</h2>
+            <p>123 Decode Street, Tech City</p>
+            <p>Email: info@decodelabs.com</p>
+            <p style="margin-top: 40px;">&copy; 2026 DecodeLabs Industrial Training</p>
+        </div>
+    </footer>
+
+</body>
+</html>
